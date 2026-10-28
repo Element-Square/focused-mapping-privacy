@@ -7,6 +7,7 @@
 - Package: `com.elsq.mapping`
 - Contact: summit.geeks@gmail.com
 - Default language: English (toggle to 中文); system fonts only
+- Aligned to engineering package recalibrated 2026-10-28 (`versionName` 1.1 / `versionCode` 11)
 - Files: `index.html`, `styles.css`, `favicon.svg`
 
 This README is repo notes only; the live Pages site is authoritative.
