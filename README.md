@@ -6,7 +6,7 @@
 最后更新 / Last updated：2026-10-28
 
 开发者 / Developer：集火映射（Focused mapping）  
-联系邮箱 / Contact：请在此处填写你的支持邮箱（须与 Google Play 开发者邮箱一致）
+联系邮箱 / Contact：summit.geeks@gmail.com
 
 ---
 
