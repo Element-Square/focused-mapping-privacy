@@ -3,13 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>集火映射 隐私政策 · Focused mapping Privacy Policy</title>
-  <meta name="description" content="集火映射（Focused mapping，com.elsq.mapping）隐私政策。本机映射与绑定；用户点选激活；无广告 SDK；当前未启用云同步。" />
+  <title>Focused mapping Privacy Policy · 集火映射</title>
+  <meta name="description" content="Privacy Policy for Focused mapping (com.elsq.mapping). On-device mapping and bindings; user-tapped activation; no ads SDK; cloud sync not enabled." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://element-square.github.io/focused-mapping-privacy/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <meta name="theme-color" content="#0b1220" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Focused mapping Privacy Policy" />
+  <meta property="og:description" content="On-device mapping and bindings; user-tapped activation; no ads SDK; cloud sync not enabled." />
+  <meta property="og:url" content="https://element-square.github.io/focused-mapping-privacy/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="zh_CN" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -140,6 +145,7 @@
               <li><strong>通知（POST_NOTIFICATIONS）</strong>：映射服务状态与无线调试配对提示。</li>
               <li><strong>前台服务（CONNECTED_DEVICE）</strong>：键鼠连接或激活完成后保持映射服务可用。</li>
               <li><strong>网络与 Wi‑Fi 状态</strong>：无线调试配对与局域网检测。</li>
+              <li><strong>更改 Wi‑Fi 组播状态（CHANGE_WIFI_MULTICAST_STATE）</strong>：仅用于本机无线调试配对时的局域网设备发现，不用于追踪位置或读取其它设备内容。</li>
               <li><strong>忽略电池优化（可选）</strong>：降低系统结束映射服务的概率。</li>
               <li><strong>Shizuku（可选）</strong>：仅当你点选「使用 Shizuku 激活」并在 Shizuku 中确认后使用。</li>
             </ul>
@@ -240,6 +246,7 @@
               <li><strong>Notifications:</strong> service status and wireless-debugging prompts.</li>
               <li><strong>Foreground service (connected device):</strong> keep mapping available after you connect peripherals or finish activation.</li>
               <li><strong>Internet / Wi‑Fi state:</strong> wireless debugging pairing.</li>
+              <li><strong>Change Wi‑Fi multicast state (CHANGE_WIFI_MULTICAST_STATE):</strong> local network discovery during wireless debugging pairing only—not for location tracking or reading other devices’ content.</li>
               <li><strong>Ignore battery optimizations (optional):</strong> reduce unexpected stops.</li>
               <li><strong>Shizuku (optional):</strong> only after you choose Shizuku activation and confirm in the Shizuku app.</li>
             </ul>
