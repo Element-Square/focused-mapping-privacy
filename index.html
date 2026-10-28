@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -24,20 +24,20 @@
         </div>
       </div>
       <div class="lang" role="group" aria-label="Language">
-        <button type="button" id="btn-zh" aria-pressed="true">中文</button>
-        <button type="button" id="btn-en" aria-pressed="false">English</button>
+        <button type="button" id="btn-en" aria-pressed="true">English</button>
+        <button type="button" id="btn-zh" aria-pressed="false">中文</button>
       </div>
     </div>
   </header>
 
   <main class="wrap" id="main">
     <section class="hero">
-      <div data-lang="zh">
+      <div data-lang="zh" hidden>
         <p class="eyebrow">Google Play · 隐私政策</p>
         <h1>隐私政策</h1>
         <p class="lede">本页说明「集火映射」如何处理信息。映射与绑定默认保存在本机；激活 / 连接由你点选；当前无广告 SDK、无强制账号，云同步未启用。</p>
       </div>
-      <div data-lang="en" hidden>
+      <div data-lang="en">
         <p class="eyebrow">Google Play · Privacy Policy</p>
         <h1>Privacy Policy</h1>
         <p class="lede">How Focused mapping handles information. Mapping stays on-device by default; you tap to activate/connect; no ads SDK, no required account, and cloud sync is not enabled.</p>
@@ -49,13 +49,13 @@
         <div class="meta-item"><span class="k">Updated</span><span class="v">2026-10-28</span></div>
         <div class="meta-item"><span class="k">Contact</span><span class="v"><a href="mailto:summit.geeks@gmail.com">summit.geeks@gmail.com</a></span></div>
       </div>
-      <div class="pill-row" data-lang="zh">
+      <div class="pill-row" data-lang="zh" hidden>
         <span class="pill">本机优先</span>
         <span class="pill">用户点选激活</span>
         <span class="pill">无广告 SDK</span>
         <span class="pill">云同步未启用</span>
       </div>
-      <div class="pill-row" data-lang="en" hidden>
+      <div class="pill-row" data-lang="en">
         <span class="pill">On-device first</span>
         <span class="pill">User-tapped activation</span>
         <span class="pill">No ads SDK</span>
@@ -65,7 +65,7 @@
 
     <div class="layout">
       <nav class="toc" aria-label="Contents">
-        <div data-lang="zh">
+        <div data-lang="zh" hidden>
           <h2>目录</h2>
           <ol>
             <li><a href="#zh-1">1. 我们是谁</a></li>
@@ -81,7 +81,7 @@
             <li><a href="#zh-11">11. 联系我们</a></li>
           </ol>
         </div>
-        <div data-lang="en" hidden>
+        <div data-lang="en">
           <h2>Contents</h2>
           <ol>
             <li><a href="#en-1">1. Who we are</a></li>
@@ -100,7 +100,7 @@
       </nav>
 
       <article class="panel">
-        <div data-lang="zh">
+        <div data-lang="zh" hidden>
           <section class="section" id="zh-1">
             <h2>1. 我们是谁</h2>
             <p>「集火映射」（Google Play 显示名称：集火映射，软件包名称 <code>com.elsq.mapping</code>）是一款 Android 上的物理键盘、鼠标与触控映射工具。绑定目标应用后，可<strong>直接启动原应用</strong>；映射计算在<strong>本机</strong>完成。本政策说明本应用如何处理信息。</p>
@@ -200,7 +200,7 @@
           </section>
         </div>
 
-        <div data-lang="en" hidden>
+        <div data-lang="en">
           <section class="section" id="en-1">
             <h2>1. Who we are</h2>
             <p>Focused mapping (Play listing name: 集火映射, package <code>com.elsq.mapping</code>) maps a physical keyboard and mouse to on-screen touch on Android. After you bind a target app, you can <strong>launch the original app directly</strong>. Mapping runs <strong>on-device</strong>. This policy describes how the app handles information.</p>
@@ -314,8 +314,8 @@
       btnEn.addEventListener('click', function () { setLang('en'); });
       var saved = null;
       try { saved = localStorage.getItem('fm-privacy-lang'); } catch (e) {}
-      if (saved === 'en' || saved === 'zh') setLang(saved);
-      else if ((navigator.language || '').toLowerCase().indexOf('zh') !== 0) setLang('en');
+      if (saved === 'zh') setLang('zh');
+      else setLang('en');
     })();
   </script>
 </body>
