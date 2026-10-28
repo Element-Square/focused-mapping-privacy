@@ -240,3 +240,34 @@ tr:last-child td { border-bottom: 0; }
 }
 
 [hidden] { display: none !important; }
+
+.eyebrow {
+  margin: 0 0 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: #0b5542;
+  border: 1px solid #cfe8de;
+}
+.callout.warn {
+  background: var(--warn-bg);
+  border-color: #f0d9a8;
+  color: var(--warn-ink);
+}
