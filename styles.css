@@ -10,7 +10,7 @@
   --warn-ink: #7a4d00;
   --radius: 14px;
   --shadow: 0 1px 2px rgba(21, 24, 30, 0.04), 0 12px 32px rgba(21, 24, 30, 0.06);
-  --max: 920px;
+  --max: min(1320px, calc(100vw - 48px));
   --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
   --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
 }
@@ -106,7 +106,7 @@ a:hover { color: #0b5542; }
 .hero .lede {
   margin: 0 0 18px;
   color: var(--muted);
-  max-width: 62ch;
+  max-width: none;
 }
 .meta {
   display: grid;
@@ -131,13 +131,16 @@ a:hover { color: #0b5542; }
 
 .layout {
   display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 18px;
+  grid-template-columns: minmax(200px, 240px) minmax(0, 1fr);
+  gap: clamp(16px, 2vw, 28px);
   align-items: start;
 }
-@media (max-width: 860px) {
+@media (max-width: 960px) {
   .layout { grid-template-columns: 1fr; }
   .toc { position: static !important; }
+}
+@media (min-width: 1400px) {
+  :root { --max: min(1480px, calc(100vw - 64px)); }
 }
 
 .toc {
@@ -179,9 +182,13 @@ a:hover { color: #0b5542; }
   font-size: 1.15rem;
   letter-spacing: -0.01em;
 }
-.section p { margin: 0 0 12px; }
+.section p { margin: 0 0 12px; text-wrap: pretty; }
 .section ul { margin: 0 0 8px; padding-left: 1.2em; }
-.section li { margin: 0 0 8px; }
+.section li { margin: 0 0 8px; text-wrap: pretty; }
+.section, .callout, .lede {
+  overflow-wrap: break-word;
+  word-break: normal;
+}
 
 .callout {
   background: var(--accent-soft);
@@ -195,22 +202,34 @@ a:hover { color: #0b5542; }
 
 .table-wrap {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   border: 1px solid var(--line);
   border-radius: 12px;
   margin: 8px 0 14px;
+}
+@media (max-width: 720px) {
+  table { min-width: 560px; }
+  td:nth-child(2) { white-space: normal; }
 }
 table {
   width: 100%;
   border-collapse: collapse;
   font-size: 13.5px;
-  min-width: 560px;
+  min-width: 0;
+  table-layout: auto;
 }
 th, td {
   text-align: left;
-  padding: 11px 12px;
+  padding: 11px 14px;
   border-bottom: 1px solid var(--line);
   vertical-align: top;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  line-break: auto;
 }
+td:first-child { min-width: 12em; width: 42%; }
+td:nth-child(2) { min-width: 7em; white-space: nowrap; }
+td:nth-child(3) { min-width: 8em; }
 th {
   background: #f3f5f8;
   font-size: 12px;
